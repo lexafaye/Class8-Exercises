@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+<p>
+  <strong>Books:</strong>
+  <% @user.books.each do |books| %>
+  	<div>
+        <b>Book Title:</b> <span style="color:red"><%= books.title %></span>,
+        <b>Author Last Name:</b> <span style="color:red"><%= books.last %></span>
+        <b>Author First Name:</b> <span style="color:red"><%= books.first %></span>
+  	 </div>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
